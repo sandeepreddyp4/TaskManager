@@ -1,0 +1,47 @@
+<div class="container">
+  <header>
+    <h3>Add Task</h3>
+  </header>
+  
+  <main aria-label="add task form">
+    <form class="my-4" #addTaskForm="ngForm">
+      <div class="form-group row">
+        <label for="task" class="col-sm-2 col-form-label">Task:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="task" name="task" required [(ngModel)]="this.task.task">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="priority" class="col-sm-2 col-form-label">Priority:</label>
+        <div class="col-sm-6">
+          <input type="range" class="custom-range" min="0" max="30" id="priority" name="priority" required [(ngModel)]="this.task.priority">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="parentTask" class="col-sm-2 col-form-label">Parent Task:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="parentTask" name="parentTask" required [(ngModel)]="this.task.parentTask">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="startDate" class="col-sm-2 col-form-label">Start Date:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="startDate" name="startDate" required [(ngModel)]="this.task.startDate">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="endDate" class="col-sm-2 col-form-label">End Date:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="endDate" name="endDate" required [(ngModel)]="this.task.endDate">
+        </div>
+      </div>
+      <div class="offset-md-2">
+        <button class="btn btn-primary mr-2" type="submit" (click)="addTask()">Add Task</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="addTaskForm.reset()">Reset</button>
+      </div>        
+    </form>
+  </main>
+</div>
